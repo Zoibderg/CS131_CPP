@@ -19,47 +19,49 @@
 using namespace std;
 
 int main(){
-    // Set floors
+    // Set floor values.
     int lowest_floor = 10, highest_floor = 16;
+    int total_floors = highest_floor - lowest_floor;
+    int const SUITES_PER_FLOOR = 20;
     
-    int const TOTAL_SUITES = 120;
+    int const TOTAL_SUITES = total_floors * SUITES_PER_FLOOR;
     int occupied_suites = 0;
     
-    // Iterate thorugh floors
-    int current_floor = lowest_floor;
+    // Iterate thorugh floors.
+    int floor, user_input;
     
-    while (current_floor <= highest_floor)
-    {
-        if (current_floor == 13){
+    for (floor = lowest_floor; floor <= highest_floor; ++floor){
+        // No 13th floor, skip.
+        if (floor == 13)
             continue;
-        }
         
-        // Promt user for number off occupied suites on current floor
-        cout << "How many suites are occupied on floor " << current_floor << "?" << endl;
-        
-        int user_input;
-        cin >> user_input;      // Store input for validation
-        
-        // Validate input
-        while (user_input < 0 || user_input > 20){
-            cout << "Invalid input."
-            << "How many suites are occupied on floor " << current_floor << "?" << endl;
-            
+        do {
+            // Prompt user for total number of occupied floors.
+            cout << "Enter the number of occupied suites on floor " << floor << ": " << endl;
             cin >> user_input;
-        }
+            
+            // Validate input.
+            if (user_input < 0 || user_input > 20){
+                cout << "Input invalid." << endl;
+            }
+        } while (user_input < 0 || user_input > 20);
         
+        // User supplied valid input, move to next floor.
         occupied_suites += user_input;
     }
     
     // Display total number of suites avaliable
     int suites_avaliable = TOTAL_SUITES - occupied_suites;
     
-    cout << "The top 5 floors of the hotel has " << suites_avaliable << " avaliable suites." << endl;
-    
-    // Display occupied suites
-    cout << occupied_suites << " of them are occupied." << endl;
+    cout << "The top 5 floors of the hotel has " << TOTAL_SUITES << " avaliable suites." << endl;
     
     // Display percentage of occupied suites
+    double (occupancy_rate) = (static_cast<double>(occupied_suites) / TOTAL_SUITES) * 100.0;
+    
+    cout << occupancy_rate << "% of the top floor suites are unavaliable." << endl;
+    
+    // Display occupied and unoccupied numbers.
+    cout << occupied_suites << " occupied / " << suites_avaliable << " avaliable" << endl;
     
     return 0;
 }
