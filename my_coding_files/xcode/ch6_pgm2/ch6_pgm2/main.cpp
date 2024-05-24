@@ -26,7 +26,7 @@ const int TOTAL_CARS = 3;
 
 int main() {
     string make1, make2, make3;
-    double gallons1, gallons2, gallons3;
+    double gallons1 = 0.0, gallons2 = 0.0, gallons3 = 0.0;  // initlize variables to clear uninitialized variable warning
 
     // Request input from user
     for (int i = 1; i <= TOTAL_CARS; ++i) {
