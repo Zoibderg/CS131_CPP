@@ -24,6 +24,7 @@
  */
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -40,7 +41,7 @@ int main(){
     double future_value = calcFutureValue(starting_value, intrest_rate, time_frame);
     
     // display future value
-    cout << "In " << time_frame << " months this account will have a value of $" << future_value << endl;
+    cout << "In " << time_frame << " months this account will have a value of $" << setprecision(2) << fixed << future_value << endl;
     
     return 0;
 }

@@ -17,7 +17,6 @@
  The variables in the formula are as follows:
  d is the distance in meters,
  g is 9.8,
-
  and t is the time in seconds that the object has been falling.
 
  */
