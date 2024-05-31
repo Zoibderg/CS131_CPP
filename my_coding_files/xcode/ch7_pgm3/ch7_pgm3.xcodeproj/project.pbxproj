@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		73AA349F2C09BA8B00950C28 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73AA349E2C09BA8B00950C28 /* main.cpp */; };
+		73AA34A72C09CCC500950C28 /* teamScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73AA34A52C09CCC500950C28 /* teamScore.cpp */; };
+		73AA34AA2C09D48800950C28 /* menuOperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73AA34A82C09D48800950C28 /* menuOperations.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		73AA349B2C09BA8B00950C28 /* ch7_pgm3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ch7_pgm3; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AA349E2C09BA8B00950C28 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		73AA34A52C09CCC500950C28 /* teamScore.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = teamScore.cpp; sourceTree = "<group>"; };
+		73AA34A62C09CCC500950C28 /* teamScore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = teamScore.hpp; sourceTree = "<group>"; };
+		73AA34A82C09D48800950C28 /* menuOperations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = menuOperations.cpp; sourceTree = "<group>"; };
+		73AA34A92C09D48800950C28 /* menuOperations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = menuOperations.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				73AA349E2C09BA8B00950C28 /* main.cpp */,
+				73AA34A82C09D48800950C28 /* menuOperations.cpp */,
+				73AA34A92C09D48800950C28 /* menuOperations.hpp */,
+				73AA34A52C09CCC500950C28 /* teamScore.cpp */,
+				73AA34A62C09CCC500950C28 /* teamScore.hpp */,
 			);
 			path = ch7_pgm3;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AA349F2C09BA8B00950C28 /* main.cpp in Sources */,
+				73AA34AA2C09D48800950C28 /* menuOperations.cpp in Sources */,
+				73AA34A72C09CCC500950C28 /* teamScore.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
