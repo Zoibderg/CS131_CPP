@@ -22,14 +22,17 @@ public:
     team_name(team), num_wins(0), num_ties(0), num_losses(0) {}
     
     void updateWins(){
+        // increment wins by 1
         num_wins++;
     }
     
     void updateTies(){
+        // increment ties by 1
         num_ties++;
     }
     
     void updateLosses(){
+        // increment losses by 1
         num_losses++;
     }
     

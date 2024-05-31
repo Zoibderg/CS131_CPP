@@ -29,9 +29,12 @@
 using namespace std;
 
 int main(){
+    // init menu
     menuOperations menu;
     
+    // get team from user
     menu.getTeam();
+    // start menu
     menu.startMenu();
     
     return 0;
