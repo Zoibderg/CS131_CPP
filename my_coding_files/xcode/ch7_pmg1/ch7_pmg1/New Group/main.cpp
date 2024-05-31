@@ -19,31 +19,9 @@
 
 #include <iostream>
 
+#include "WidgetProduction.hpp"
+
 using namespace std;
-
-class WidgetProduction{
-private:
-    
-    double const HOURLY_PRODUCTION = 10, SHIFT_LENGTH = 8, DAILY_SHIFTS = 2;
-    int widgets;
-    
-public:
-    
-    double calcProductionTime(int);
-
-};
-
-double WidgetProduction::calcProductionTime(int widgets){
-    // calculate how many days to produce any number of widgets
-    // (total_widgets / 10) - total hours needed
-    // (total_hours_needed / 8) - total shifts needed
-    // (total_shifts / 2) - total days needed
-    
-    double time_frame = ((widgets / HOURLY_PRODUCTION) / SHIFT_LENGTH) / DAILY_SHIFTS;
-    
-    return time_frame;
-}
-
 
 int main(){
     WidgetProduction user_order;
