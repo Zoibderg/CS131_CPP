@@ -6,7 +6,7 @@
  
  Purpose:
  A program that uses a structure named CorpData to store the following information on a company division: 
- division name (e.g., East, West, North, or South), qtr1 sales, qtr2 sales, qtr3 sales, and qtr4 sales
+ division name (e.g., East, West, North, or South), qtr1 sales, qtr2 sales, qtr3 sales, and qtr4 sales.
 
  Include a constructor that allows the division name and four quarterly sales amount to be specified at the time a CorpData variable is created.
 

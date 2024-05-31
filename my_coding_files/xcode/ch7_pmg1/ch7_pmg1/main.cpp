@@ -5,7 +5,7 @@
  Compiler used:  XCODE v. 15.0
  
  Purpose:
- Write a program that asks the user for the number of widgets that have been ordered and then displays the number of days it will take to produce them.
+ A program that asks the user for the number of widgets that have been ordered and then displays the number of days it will take to produce them.
  
  --------------------------------------------------------------------------------------------
  

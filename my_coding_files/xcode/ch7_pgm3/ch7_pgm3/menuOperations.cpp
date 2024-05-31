@@ -45,8 +45,6 @@ void menuOperations::startMenu(){
             case 5:
                 // get new team
                 menu.getTeam();
-                // start menu
-                menu.startMenu();
                 break;
                 
             case 6:
@@ -58,5 +56,5 @@ void menuOperations::startMenu(){
                 // invalid input
                 cout << "Invalid input." << endl;
         }
-    } while (user_choice != 5);
+    } while (user_choice != 6);
 }
