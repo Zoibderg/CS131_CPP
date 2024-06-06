@@ -20,59 +20,54 @@
 */
 
 #include <iostream>
-#include <string>
-
+#include <iomanip>
 using namespace std;
 
-int main(){
-    
-    // init 2 dimensional array (3 x 7)
-    // rows represent differnt monkeys (3)
-    // columns represnt differnt days of the week (7)
-    int const TOTALMONKEYS = 3;
-    int const WEEKDAYS = 7;
-    
-    int food_consumption[TOTALMONKEYS][WEEKDAYS];
-    
-    int current_monkey;
-    int current_monkey_arr[WEEKDAYS];
-    
-    for (int i = 0; i < TOTALMONKEYS; i++){
-        cout << "Food consumed by monkey # " << i + 1 << endl;
+const int MONKEYS = 3;
+const int DAYS = 7;
+
+int main() {
+    double food[MONKEYS][DAYS];
+    double totalFood = 0;
+    double minFood, maxFood;
+
+    // Input the food data
+    for (int i = 0; i < MONKEYS; ++i) {
+        cout << "Enter the amount of food eaten by monkey " << i + 1 << " each day of the week:\n";
         
-        for (int j = 0; j < WEEKDAYS; j++){
-            cout << "Day # " << j + 1 << endl;
-            cin >> food_consumption[i][j];
+        for (int j = 0; j < DAYS; ++j) {
+            cout << "Day " << j + 1 << ": ";
+            cin >> food[i][j];
+            totalFood += food[i][j];
         }
     }
 
-    
-    // determine avrage amout of food eaten per day by whole family of monkeys
-    int total_consumption = NULL;
-    
-    for (int i = 0; i < TOTALMONKEYS; i++)
-        for (int j = 0; j < WEEKDAYS; j++)
-            total_consumption += food_consumption[i][j];
-    
-    double family_avarage = total_consumption / WEEKDAYS;
-    
-    cout << "The monkey family's avarage food consumption is: " << family_avarage << endl;
-    
-    // determine the least amout of food eaten during the week by any one monkey
-    // dertimine the most amout of food eaten during the week by any one monkey
-    int least_consumed = NULL, most_consumed = NULL;
-    
-    for (int i = 0; i < TOTALMONKEYS; i++)
-        for (int j = 0; j < WEEKDAYS; j++){
-            if (food_consumption[i][j] > most_consumed)
-                most_consumed = i;
+    // Calculate average food per day
+    double avgFoodPerDay = totalFood / (MONKEYS * DAYS);
+
+    // Find the minimum and maximum food eaten
+    minFood = maxFood = food[0][0];
+    for (int i = 0; i < MONKEYS; ++i) {
+        
+        for (int j = 0; j < DAYS; ++j) {
             
-            else if (food_consumption[i][j] < least_consumed)
-                least_consumed = i;
+            // new min consumption
+            if (food[i][j] < minFood) {
+                minFood = food[i][j];
+            }
+            
+            // new max consumption
+            if (food[i][j] > maxFood) {
+                maxFood = food[i][j];
+            }
         }
-    
-    cout << "Monkey " << least_consumed + 1 << " consumed the least amount of food." << endl;
-    cout << "Monkey " << most_consumed + 1 << " consumed the most amount of food." << endl;
-    
+    }
+
+    // Report the results
+    cout << fixed << setprecision(2);
+    cout << "\nAverage amount of food eaten per day by the whole family of monkeys: " << avgFoodPerDay << " pounds\n";
+    cout << "Least amount of food eaten during the week by any one monkey: " << minFood << " pounds\n";
+    cout << "Greatest amount of food eaten during the week by any one monkey: " << maxFood << " pounds\n";
+
     return 0;
 }

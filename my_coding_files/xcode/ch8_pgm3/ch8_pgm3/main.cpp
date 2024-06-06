@@ -27,13 +27,20 @@ int main(){
     string input_string;
     
     do {
+        // always collect at least one string
         cout << "\nProvied a string for conversion or \"Q\" to quit." << endl;
         getline(cin, input_string);
         
+        if (input_string == "Q" || input_string == "q") {
+            cout << "Exiting program." << endl;
+            break;
+        }
+        
+        // convert strings and output
         cout << "Your string converted to all uppper case: " << convert.upperCase(input_string) << endl;
         cout << "Your string converted to \"Proper Case\": " << convert.properWords(input_string) << endl;
         
-    } while (input_string != "Q" && input_string != "q");
+    } while (true);       // user has quit program
 
     return 0;
 }
