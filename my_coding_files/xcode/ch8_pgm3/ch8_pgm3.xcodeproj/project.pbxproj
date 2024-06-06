@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7377702A2C123C88008E7A3F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 737770292C123C88008E7A3F /* main.cpp */; };
+		737770322C125F11008E7A3F /* CharConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 737770302C125F11008E7A3F /* CharConverter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		737770262C123C88008E7A3F /* ch8_pgm3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ch8_pgm3; sourceTree = BUILT_PRODUCTS_DIR; };
 		737770292C123C88008E7A3F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		737770302C125F11008E7A3F /* CharConverter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CharConverter.cpp; sourceTree = "<group>"; };
+		737770312C125F11008E7A3F /* CharConverter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CharConverter.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 		7377701D2C123C88008E7A3F = {
 			isa = PBXGroup;
 			children = (
+				737770332C1260B7008E7A3F /* header files */,
 				737770282C123C88008E7A3F /* ch8_pgm3 */,
 				737770272C123C88008E7A3F /* Products */,
 			);
@@ -58,8 +62,17 @@
 			isa = PBXGroup;
 			children = (
 				737770292C123C88008E7A3F /* main.cpp */,
+				737770302C125F11008E7A3F /* CharConverter.cpp */,
 			);
 			path = ch8_pgm3;
+			sourceTree = "<group>";
+		};
+		737770332C1260B7008E7A3F /* header files */ = {
+			isa = PBXGroup;
+			children = (
+				737770312C125F11008E7A3F /* CharConverter.hpp */,
+			);
+			path = "header files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737770322C125F11008E7A3F /* CharConverter.cpp in Sources */,
 				7377702A2C123C88008E7A3F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
