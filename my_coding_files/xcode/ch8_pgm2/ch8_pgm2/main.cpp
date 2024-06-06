@@ -20,6 +20,7 @@
 */
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -33,12 +34,18 @@ int main(){
     
     int food_consumption[TOTALMONKEYS][WEEKDAYS];
     
-    // collect user input for each monkey
-    for (int i = 0; i < TOTALMONKEYS; i++)
+    int current_monkey;
+    int current_monkey_arr[WEEKDAYS];
+    
+    for (int i = 0; i < TOTALMONKEYS; i++){
+        cout << "Food consumed by monkey # " << i + 1 << endl;
+        
         for (int j = 0; j < WEEKDAYS; j++){
-            cout << "Provide total amout of food consumed by monkey " << i+1 << " on day " << j+1 << endl;
+            cout << "Day # " << j + 1 << endl;
             cin >> food_consumption[i][j];
         }
+    }
+
     
     // determine avrage amout of food eaten per day by whole family of monkeys
     int total_consumption = NULL;
@@ -49,7 +56,7 @@ int main(){
     
     double family_avarage = total_consumption / WEEKDAYS;
     
-    cout << "The monkey family's avrage food consumptionn is: " << family_avarage << endl;
+    cout << "The monkey family's avarage food consumption is: " << family_avarage << endl;
     
     // determine the least amout of food eaten during the week by any one monkey
     // dertimine the most amout of food eaten during the week by any one monkey
@@ -58,14 +65,14 @@ int main(){
     for (int i = 0; i < TOTALMONKEYS; i++)
         for (int j = 0; j < WEEKDAYS; j++){
             if (food_consumption[i][j] > most_consumed)
-                most_consumed = i+1;
+                most_consumed = i;
             
             else if (food_consumption[i][j] < least_consumed)
-                least_consumed = i+1;
+                least_consumed = i;
         }
     
-    cout << "Monkey " << least_consumed << " consumed the least amount of food." << endl;
-    cout << "Monkey " << most_consumed << " consumed the most amount of food" << endl;
+    cout << "Monkey " << least_consumed + 1 << " consumed the least amount of food." << endl;
+    cout << "Monkey " << most_consumed + 1 << " consumed the most amount of food." << endl;
     
     return 0;
 }
