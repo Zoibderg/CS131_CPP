@@ -151,5 +151,9 @@ int main(){
     
     sales.writeToFile();
     
+    // satisfies part 3, no functionality
+    SalesCls sales_arry[3];
+    sales_arry[0].getRep();
+    
     return 0;
 }
