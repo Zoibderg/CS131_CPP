@@ -41,9 +41,42 @@ cs131_final_exam_practice
 
 */
 
-# include <iostream>
+#include <iostream>
+#include <string>
 
 using namespace std;
+
+class SalesCls{
+private:
+    string sales_rep;
+    int sales_amount;
+    
+public:
+    
+    void updateSales(){
+        // update sales for a rep
+        
+    }
+    
+    void calcCommision(){
+        // calculate the commision for a rep
+        /*
+         
+         Commission Rate Table:
+
+         Sales Amount                   Commission Rate
+
+         < 5000                                      1%
+
+         between 5000 and 10000                      2%
+
+         > 10000                                     3%
+         
+         */
+        
+    }
+    
+};
 
 int main(){
     
