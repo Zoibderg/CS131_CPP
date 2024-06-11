@@ -122,7 +122,7 @@ void SalesCls::writeToFile(){
     // write commission information for rep to file
     ofstream ofile;
     
-    ofile.open("sales.txt");
+    ofile.open("sales.txt", fstream::app);
     
     ofile << getRep() << " has made a total of $" << getCommission() << " in commission." << endl;
     
