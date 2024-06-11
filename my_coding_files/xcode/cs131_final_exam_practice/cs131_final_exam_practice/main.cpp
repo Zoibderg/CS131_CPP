@@ -119,6 +119,7 @@ void SalesCls::calcCommission(){
 }
 
 void SalesCls::writeToFile(){
+    // write commission information for rep to file
     ofstream ofile;
     
     ofile.open("sales.txt");
@@ -131,6 +132,7 @@ void SalesCls::writeToFile(){
 int main(){
     SalesCls sales;
     
+    // get name from user and setRep
     cout << "Sales representives name: " << endl;
     
     string user_name;
@@ -138,6 +140,7 @@ int main(){
     
     sales.setRep(user_name);
     
+    // get sales form user and setSales
     cout << "Total amount in sales: " << endl;
     
     double user_sales;
@@ -145,10 +148,13 @@ int main(){
     
     sales.setSales(user_sales);
     
+    // calculate total commission
     sales.calcCommission();
     
+    // output commission to user
     cout << sales.getRep() << " has made a total of $" << sales.getCommission() << " in commission." << endl;
     
+    // part 2, write information to file
     sales.writeToFile();
     
     // satisfies part 3, no functionality
