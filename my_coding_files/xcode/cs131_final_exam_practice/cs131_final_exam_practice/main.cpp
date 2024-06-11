@@ -51,16 +51,30 @@ private:
     string sales_rep;
     double sales_amount;
     
+    double commision;
+    double total_commision, sales_w_commision;
+    
 public:
     
     // constructor
     SalesCls(){
         sales_rep = "None";
         sales_amount = 0;
+        
+        commision = 0;
+        total_commision = 0;
     }
     
+    // setter functions
     void setRep(string);
-    void updateSales(double);
+    void setSales(double);
+    
+    // getter functions
+    string getRep();
+    double getSales();
+    double getCommision();
+    
+    // operation functions
     void calcCommision();
     
 };
@@ -70,16 +84,25 @@ void SalesCls::setRep(string name){
     sales_rep = name;
 }
 
-void SalesCls::updateSales(double sales){
+void SalesCls::setSales(double sales){
     // update sales for a rep
     sales_amount = sales;
 }
 
+string SalesCls::getRep(){
+    return sales_rep;
+}
+
+double SalesCls::getSales(){
+    return sales_amount;
+}
+
+double SalesCls::getCommision(){
+    return total_commision;
+}
+
 void SalesCls::calcCommision(){
     // calculate the commision for a rep
-    
-    double commision = 0;
-    double total_commision, sales_w_commision;
     
     if (sales_amount < 5000)
         commision = 0.01;
@@ -91,10 +114,28 @@ void SalesCls::calcCommision(){
         commision = 0.03;
     
     total_commision = sales_amount * commision;
-    sales_w_commision = sales_amount + total_commision;
 }
 
 int main(){
+    SalesCls sales;
+    
+    cout << "Sales representives name: " << endl;
+    
+    string user_name;
+    cin >> user_name;
+    
+    sales.setRep(user_name);
+    
+    cout << "Total amount in sales: " << endl;
+    
+    double user_sales;
+    cin >> user_sales;
+    
+    sales.setSales(user_sales);
+    
+    sales.calcCommision();
+    
+    cout << sales.getRep() << " has made a total of $" << sales.getCommision() << " in commision." << endl;
     
     return 0;
 }
