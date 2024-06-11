@@ -43,6 +43,7 @@ cs131_final_exam_practice
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -51,8 +52,8 @@ private:
     string sales_rep;
     double sales_amount;
     
-    double commision;
-    double total_commision, sales_w_commision;
+    double commission;
+    double total_commission, sales_w_commission;
     
 public:
     
@@ -61,8 +62,8 @@ public:
         sales_rep = "None";
         sales_amount = 0;
         
-        commision = 0;
-        total_commision = 0;
+        commission = 0;
+        total_commission = 0;
     }
     
     // setter functions
@@ -72,10 +73,11 @@ public:
     // getter functions
     string getRep();
     double getSales();
-    double getCommision();
+    double getCommission();
     
     // operation functions
-    void calcCommision();
+    void calcCommission();
+    void writeToFile();
     
 };
 
@@ -97,23 +99,33 @@ double SalesCls::getSales(){
     return sales_amount;
 }
 
-double SalesCls::getCommision(){
-    return total_commision;
+double SalesCls::getCommission(){
+    return total_commission;
 }
 
-void SalesCls::calcCommision(){
+void SalesCls::calcCommission(){
     // calculate the commision for a rep
     
     if (sales_amount < 5000)
-        commision = 0.01;
+        commission = 0.01;
     
     else if (sales_amount > 5000 && sales_amount < 10000)
-        commision = 0.02;
+        commission = 0.02;
     
     else
-        commision = 0.03;
+        commission = 0.03;
     
-    total_commision = sales_amount * commision;
+    total_commission = sales_amount * commission;
+}
+
+void SalesCls::writeToFile(){
+    ofstream ofile;
+    
+    ofile.open("sales.txt");
+    
+    ofile << getRep() << " has made a total of $" << getCommission() << " in commission." << endl;
+    
+    ofile.close();
 }
 
 int main(){
@@ -133,9 +145,11 @@ int main(){
     
     sales.setSales(user_sales);
     
-    sales.calcCommision();
+    sales.calcCommission();
     
-    cout << sales.getRep() << " has made a total of $" << sales.getCommision() << " in commision." << endl;
+    cout << sales.getRep() << " has made a total of $" << sales.getCommission() << " in commission." << endl;
+    
+    sales.writeToFile();
     
     return 0;
 }
