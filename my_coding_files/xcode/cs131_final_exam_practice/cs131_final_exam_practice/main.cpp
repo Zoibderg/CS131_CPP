@@ -53,7 +53,7 @@ private:
     double sales_amount;
     
     double commission;
-    double total_commission, sales_w_commission;
+    double total_commission;
     
 public:
     
