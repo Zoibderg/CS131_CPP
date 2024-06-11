@@ -49,14 +49,14 @@ using namespace std;
 class SalesCls{
 private:
     string sales_rep;
-    int sales_amount;
+    double sales_amount;
     
 public:
     
     // constructor
-    SalesCls(string rep, int sales){
-        sales_rep = rep;
-        sales = sales_amount;
+    SalesCls(){
+        sales_rep = "None";
+        sales_amount = 0;
     }
     
     void updateSales(){
