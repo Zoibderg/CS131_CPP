@@ -59,30 +59,40 @@ public:
         sales_amount = 0;
     }
     
-    void updateSales(){
-        // update sales for a rep
-        
-    }
-    
-    void calcCommision(){
-        // calculate the commision for a rep
-        /*
-         
-         Commission Rate Table:
-
-         Sales Amount                   Commission Rate
-
-         < 5000                                      1%
-
-         between 5000 and 10000                      2%
-
-         > 10000                                     3%
-         
-         */
-        
-    }
+    void setRep(string);
+    void updateSales(double);
+    void calcCommision();
     
 };
+
+void SalesCls::setRep(string name){
+    // set name for sales rep
+    sales_rep = name;
+}
+
+void SalesCls::updateSales(double sales){
+    // update sales for a rep
+    sales_amount = sales;
+}
+
+void SalesCls::calcCommision(){
+    // calculate the commision for a rep
+    
+    double commision = 0;
+    double total_commision, sales_w_commision;
+    
+    if (sales_amount < 5000)
+        commision = 0.01;
+    
+    else if (sales_amount > 5000 && sales_amount < 10000)
+        commision = 0.02;
+    
+    else
+        commision = 0.03;
+    
+    total_commision = sales_amount * commision;
+    sales_w_commision = sales_amount + total_commision;
+}
 
 int main(){
     
