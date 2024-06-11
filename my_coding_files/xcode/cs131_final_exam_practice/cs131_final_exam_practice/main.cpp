@@ -53,6 +53,12 @@ private:
     
 public:
     
+    // constructor
+    SalesCls(string rep, int sales){
+        sales_rep = rep;
+        sales = sales_amount;
+    }
+    
     void updateSales(){
         // update sales for a rep
         
